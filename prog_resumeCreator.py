@@ -21,7 +21,7 @@ link_2 = raw_details["link2"]
 
 course = raw_details["study_course"]
 university = raw_details["university"]
-year = raw_details["year1"]
+year_1 = raw_details["year1"]
 
 skill_1 = raw_details["skills"][0]
 skill_2 = raw_details["skills"][1]
@@ -31,12 +31,17 @@ skill_5 = raw_details["skills"][4]
 skill_6 = raw_details["skills"][5]
 skill_7 = raw_details["skills"][6]
 
+ojt = raw_details["ojt"]
+company = raw_details["company"]
+place = raw_details["place"]
+year_2 = raw_details["year2"]
+
 grad = raw_details["_grad"]
 summary = raw_details["_summary"]
 
 #PDF 
-#header
-_resume = FPDF('P', 'cm', 'A4')
+#headerandformat
+_resume = FPDF('P', 'cm', 'Legal')
 _resume.add_page()
 _resume.set_margins(0,0,0)
 _resume.set_font("helvetica", "B", 25)
@@ -109,10 +114,29 @@ _resume.set_font("helvetica", "", 11)
 _resume.set_text_color(0,0,0)
 _resume.set_fill_color(255,255,255)
 _resume.set_draw_color(0,0,0)
-_resume.cell(0,0.9, "                                   "+ course, align='L', ln=1, fill=1)
+_resume.cell(0,0.7, "                                   " + course, align='L', ln=1, fill=1)
 _resume.cell(0,0.7, "                                   " + university, align='L', ln=1, fill=1)
-_resume.cell(0,0.7, "                                   " + year, align='L', ln=1, fill=1)
+_resume.cell(0,0.7, "                                   " + year_1, align='L', ln=1, fill=1)
 
+_resume.set_fill_color(255,255,255)
+_resume.cell(0,0.1, ln=1, fill=1)
+
+_resume.set_font("helvetica", "B", 14)
+_resume.set_text_color(255,255,255)
+_resume.set_fill_color(0,0,102)
+_resume.cell(0,0.5, "          Skills", align='L', ln=1, fill=1, border='TB')
+
+_resume.set_font("helvetica", "", 11)
+_resume.set_text_color(0,0,0)
+_resume.set_fill_color(255,255,255)
+_resume.set_draw_color(0,0,0)
+_resume.cell(0,0.7, "                                   " + skill_1, align='L', ln=1, fill=1)
+_resume.cell(0,0.7, "                                   " + skill_2, align='L', ln=1, fill=1)
+_resume.cell(0,0.7, "                                   " + skill_3, align='L', ln=1, fill=1)
+_resume.cell(0,0.7, "                                   " + skill_4, align='L', ln=1, fill=1)
+_resume.cell(0,0.7, "                                   " + skill_5, align='L', ln=1, fill=1)
+_resume.cell(0,0.7, "                                   " + skill_6, align='L', ln=1, fill=1)
+_resume.cell(0,0.7, "                                   " + skill_7, align='L', ln=1, fill=1)
 
 
 #output
