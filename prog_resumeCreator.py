@@ -138,6 +138,23 @@ _resume.cell(0,0.7, "                                   " + skill_5, align='L', 
 _resume.cell(0,0.7, "                                   " + skill_6, align='L', ln=1, fill=1)
 _resume.cell(0,0.7, "                                   " + skill_7, align='L', ln=1, fill=1)
 
+_resume.set_fill_color(255,255,255)
+_resume.cell(0,0.1, ln=1, fill=1)
+
+_resume.set_font("helvetica", "B", 14)
+_resume.set_text_color(255,255,255)
+_resume.set_fill_color(0,0,102)
+_resume.cell(0,0.5, "          Experience", align='L', ln=1, fill=1, border='TB')
+
+_resume.set_font("helvetica", "", 11)
+_resume.set_text_color(0,0,0)
+_resume.set_fill_color(255,255,255)
+_resume.set_draw_color(0,0,0)
+_resume.cell(0,0.7, "                    On-the-Job Training: ", align='L', ln=1, fill=1)
+_resume.cell(0,0.7, "                                         " + ojt, align='L', ln=1, fill=1)
+_resume.cell(0,0.7, "                                         " + company, align='L', ln=1, fill=1)
+_resume.cell(0,0.7, "                                         " + place, align='L', ln=1, fill=1)
+_resume.cell(0,0.7, "                                         " + year_2, align='L', ln=1, fill=1)
 
 #output
 _resume.output("JUBILO_DENISEIRA.pdf")
