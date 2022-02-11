@@ -37,11 +37,32 @@ skill_7 = raw_details["skills"][6]
 _resume = FPDF('P', 'cm', 'Letter')
 _resume.add_page()
 _resume.set_margins(0,0,0)
-_resume.set_font("helvetica", "B", 22)
+_resume.set_font("helvetica", "B", 25)
+_resume.set_text_color(0,0,102)
+_resume.set_fill_color(255,255,153)
+_resume.set_draw_color(0,0,102)
+_resume.cell(0,4.5, name, align='C', ln=2, fill=1, border='LTB')
+_resume.image('2x2.jpg',0,1,4.5)
+
+_resume.set_fill_color(255,255,255)
+_resume.cell(0,0.3, ln=1, fill=1)
+
+#personal info
+_resume.set_font("helvetica", "B", 14)
+_resume.set_text_color(255,255,255)
+_resume.set_fill_color(0,0,102)
+_resume.cell(0,0.5, "          Personal Information", align='L', ln=1, fill=1, border='TB')
+
+_resume.set_font("helvetica", "", 11)
 _resume.set_text_color(0,0,0)
-_resume.set_fill_color(137,148,153)
-_resume.cell(19.7,4.5, name , align="C", ln=1, fill=1, border=1)
-_resume.image('2x2.jpg',16,1.3,4)
+_resume.set_fill_color(255,255,255)
+_resume.set_draw_color(0,0,0)
+_resume.cell(0,0.7, "                    Sex: " + sex, align='L', ln=1, fill=1)
+_resume.cell(0,0.7, "                    Age: " + age, align='L', ln=1, fill=1)
+_resume.cell(0,0.7, "                    Address: " + address, align='L', ln=1, fill=1)
+
+
+
 
 #output
 _resume.output("JUBILO_DENISEIRA.pdf")
