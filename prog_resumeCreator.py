@@ -5,8 +5,6 @@ with open('jubilo_resume.json') as data_jsonfile:
     raw_details = json.load(data_jsonfile)
 
 name = raw_details["_name"]
-job = raw_details["_job"]
-summary = raw_details["_summary"]
 sex = raw_details["_sex"]
 age = raw_details["_age"]
 address = raw_details["_address"]
@@ -23,6 +21,7 @@ link_2 = raw_details["link2"]
 
 course = raw_details["study_course"]
 university = raw_details["university"]
+year = raw_details["year1"]
 
 skill_1 = raw_details["skills"][0]
 skill_2 = raw_details["skills"][1]
@@ -31,6 +30,9 @@ skill_4 = raw_details["skills"][3]
 skill_5 = raw_details["skills"][4]
 skill_6 = raw_details["skills"][5]
 skill_7 = raw_details["skills"][6]
+
+grad = raw_details["_grad"]
+summary = raw_details["_summary"]
 
 #PDF 
 #header
@@ -94,6 +96,24 @@ _resume.cell(0,0.7, "                                   " + link_1, align='L', l
 _resume.cell(0,0.7, "                    Network: " + network_2, align='L', ln=1, fill=1)
 _resume.cell(0,0.7, "                                   " + username_2, align='L', ln=1, fill=1)
 _resume.cell(0,0.7, "                                   " + link_2, align='L', ln=1, fill=1)
+
+_resume.set_fill_color(255,255,255)
+_resume.cell(0,0.1, ln=1, fill=1)
+
+_resume.set_font("helvetica", "B", 14)
+_resume.set_text_color(255,255,255)
+_resume.set_fill_color(0,0,102)
+_resume.cell(0,0.5, "          Education", align='L', ln=1, fill=1, border='TB')
+
+_resume.set_font("helvetica", "", 11)
+_resume.set_text_color(0,0,0)
+_resume.set_fill_color(255,255,255)
+_resume.set_draw_color(0,0,0)
+_resume.cell(0,0.9, "                                   "+ course, align='L', ln=1, fill=1)
+_resume.cell(0,0.7, "                                   " + university, align='L', ln=1, fill=1)
+_resume.cell(0,0.7, "                                   " + year, align='L', ln=1, fill=1)
+
+
 
 #output
 _resume.output("JUBILO_DENISEIRA.pdf")
