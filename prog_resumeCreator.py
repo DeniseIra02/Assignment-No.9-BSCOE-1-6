@@ -34,7 +34,7 @@ skill_7 = raw_details["skills"][6]
 
 #PDF 
 #header
-_resume = FPDF('P', 'cm', 'Letter')
+_resume = FPDF('P', 'cm', 'A4')
 _resume.add_page()
 _resume.set_margins(0,0,0)
 _resume.set_font("helvetica", "B", 25)
@@ -61,8 +61,39 @@ _resume.cell(0,0.7, "                    Sex: " + sex, align='L', ln=1, fill=1)
 _resume.cell(0,0.7, "                    Age: " + age, align='L', ln=1, fill=1)
 _resume.cell(0,0.7, "                    Address: " + address, align='L', ln=1, fill=1)
 
+_resume.set_fill_color(255,255,255)
+_resume.cell(0,0.1, ln=1, fill=1)
 
+_resume.set_font("helvetica", "B", 14)
+_resume.set_text_color(255,255,255)
+_resume.set_fill_color(0,0,102)
+_resume.cell(0,0.5, "          Contact Information", align='L', ln=1, fill=1, border='TB')
 
+_resume.set_font("helvetica", "", 11)
+_resume.set_text_color(0,0,0)
+_resume.set_fill_color(255,255,255)
+_resume.set_draw_color(0,0,0)
+_resume.cell(0,0.7, "                    Contact Number: " + phone, align='L', ln=1, fill=1)
+_resume.cell(0,0.7, "                    Email Address: " + email, align='L', ln=1, fill=1)
+
+_resume.set_fill_color(255,255,255)
+_resume.cell(0,0.1, ln=1, fill=1)
+
+_resume.set_font("helvetica", "B", 14)
+_resume.set_text_color(255,255,255)
+_resume.set_fill_color(0,0,102)
+_resume.cell(0,0.5, "          Accounts", align='L', ln=1, fill=1, border='TB')
+
+_resume.set_font("helvetica", "", 11)
+_resume.set_text_color(0,0,0)
+_resume.set_fill_color(255,255,255)
+_resume.set_draw_color(0,0,0)
+_resume.cell(0,0.7, "                    Network: " + network_1, align='L', ln=1, fill=1)
+_resume.cell(0,0.7, "                                   " + username_1, align='L', ln=1, fill=1)
+_resume.cell(0,0.7, "                                   " + link_1, align='L', ln=1, fill=1)
+_resume.cell(0,0.7, "                    Network: " + network_2, align='L', ln=1, fill=1)
+_resume.cell(0,0.7, "                                   " + username_2, align='L', ln=1, fill=1)
+_resume.cell(0,0.7, "                                   " + link_2, align='L', ln=1, fill=1)
 
 #output
 _resume.output("JUBILO_DENISEIRA.pdf")
